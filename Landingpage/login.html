@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Web</title>
+</head>
+<body>
+    <section class="bg-img" style="background-image: url(assets/img/backgroundweb.jpg);">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+
+                                    <form class="mx-1 mx-md-4" id="login-form">
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="form2Example1" class="form-control" />
+                                            <label class="form-label" for="form2Example1">Email address</label>
+                                        </div>
+
+                                        <!-- Password input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="form2Example2" class="form-control" />
+                                            <label class="form-label" for="form2Example2">Password</label>
+                                        </div>
+
+                                        <!-- 2 column grid layout for inline styling -->
+                                        <div class="row mb-4">
+                                            <div class="col d-flex justify-content-center">
+                                                <!-- Checkbox -->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                                                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <!-- Simple link -->
+                                                <a href="register.html" form="login-form">Forgot password?</a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit button -->
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-primary btn-lg" onclick="loginButton()">Login</button>
+                                        </div>
+
+                                        <!-- Register buttons -->
+                                        <div class="text-center">
+                                            <p>Not a member? <a href="register.html">Register</a></p>
+                                        </div>
+
+                                        <!-- Error message -->
+                                        <div id="login-error-msg" style="opacity: 0; color: red;"></div>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src="assets/img/vesubakery.png" class="img-fluid" alt="Sample image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-white">
+      <div class="container px-5"><p class="m-0 text-center text-black">Copyright by &copy; 21552011381_Putri Ayu Ningtias</p></div>
+  </footer>
+
+    <script>
+        function loginButton() {
+            const email = document.getElementById('form2Example1').value;
+            const password = document.getElementById('form2Example2').value;
+
+            if (email.trim() === '' || password.trim() === '') {
+                document.getElementById('login-error-msg').innerHTML = 'Please fill in both email and password.';
+                document.getElementById('login-error-msg').style.opacity = 1;
+                return;
+            }
+
+            if (email === 'user@example.com' && password === 'web_dev') {
+                alert('Login successful!');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('login-error-msg').innerHTML = 'Invalid email or password.';
+                document.getElementById('login-error-msg').style.opacity = 1;
+            }
+        }
+    </script>
+</body>
+</html>
